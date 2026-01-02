@@ -13,8 +13,9 @@ def get_amazon_price(item_name: str) -> int | None:
 
     resp = requests.get(url, headers=HEADERS, timeout=15)
     if resp.status_code != 200:
-        print("❌ Amazon request failed")
+        print(f"⚠️ Amazon returned status {resp.status_code}")
         return None
+
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
