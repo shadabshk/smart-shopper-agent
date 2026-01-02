@@ -20,9 +20,6 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Read Google Sheet
-      env:
-        GSHEET_ID: ${{ secrets.GSHEET_ID }}
-        GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+    - name: Test Amazon price fetch
       run: |
-        python sheet/sync.py
+        python price_check/amazon.py
