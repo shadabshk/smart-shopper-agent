@@ -20,6 +20,6 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Test Amazon price fetch
+    - name: Test Flipkart price fetch
       run: |
-        python price_check/amazon.py
+        python price_check/flipkart.py
