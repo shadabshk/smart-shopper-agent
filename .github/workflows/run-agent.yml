@@ -27,4 +27,3 @@ jobs:
         assert os.environ.get("GOOGLE_JSON")
         print("✅ Secrets loaded successfully")
         EOF
-
