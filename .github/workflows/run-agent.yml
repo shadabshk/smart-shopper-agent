@@ -16,14 +16,13 @@ jobs:
       with:
         python-version: "3.11"
 
-    - name: Verify secrets exist
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Read Google Sheet
       env:
         GSHEET_ID: ${{ secrets.GSHEET_ID }}
-        GOOGLE_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       run: |
-        python - <<EOF
-        import os
-        assert os.environ.get("GSHEET_ID")
-        assert os.environ.get("GOOGLE_JSON")
-        print("✅ Secrets loaded successfully")
-        EOF
+        python sheet/sync.py
