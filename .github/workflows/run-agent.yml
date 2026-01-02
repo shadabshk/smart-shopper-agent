@@ -20,6 +20,6 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Test Flipkart price fetch
+    - name: Test cheapest price selection
       run: |
-        python price_check/flipkart.py
+        python decision/select_cheapest.py
