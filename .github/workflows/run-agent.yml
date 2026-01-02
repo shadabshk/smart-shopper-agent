@@ -22,4 +22,4 @@ jobs:
 
     - name: Test cheapest price selection
       run: |
-        python decision/select_cheapest.py
+        python -m decision.select_cheapest
