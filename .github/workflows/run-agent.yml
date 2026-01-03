@@ -20,6 +20,10 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Test cheapest price selection
+    - name: Process orders and update Google Sheet
+      env:
+        GSHEET_ID: ${{ secrets.GSHEET_ID }}
+        GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       run: |
-        python -m decision.select_cheapest
+        python -m sheet.sync
+
