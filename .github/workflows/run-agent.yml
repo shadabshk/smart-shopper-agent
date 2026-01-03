@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  smoke-test:
+  smart-shopper:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,4 +26,3 @@ jobs:
         GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       run: |
         python -m sheet.sync
-
